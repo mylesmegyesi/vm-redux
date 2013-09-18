@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'build-essential', '1.4.0'
+cookbook 'mysql',           '3.0.0'

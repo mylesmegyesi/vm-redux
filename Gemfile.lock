@@ -1,0 +1,16 @@
+PATH
+  remote: ../dev-vm-builder
+  specs:
+    dev-vm-builder (0.0.1)
+      thor (~> 0.18.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    thor (0.18.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dev-vm-builder!
