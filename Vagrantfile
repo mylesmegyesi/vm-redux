@@ -1,12 +1,20 @@
 
 Vagrant.configure('2') do |config|
 
-  config.librarian_chef.cheffile_dir = 'chef'
+  config.ssh.forward_agent = true
+  config.ssh.keep_alive    = true
+  config.ssh.username      = 'mylesmegyesi'
 
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  config.vm.provider 'virtualbox' do |v, override|
+    override.vm.box = 'ubuntu-13.04.amd64.virtualbox'
+  end
+
+  config.librarian_chef.cheffile_dir = '.'
   config.vm.provision :chef_solo do |chef|
 
-    chef.cookbooks_path = ['chef/cookbooks', 'site-cookbooks']
-    chef.cookbooks_path = ['chef/cookbooks', 'site-cookbooks']
+    chef.cookbooks_path = 'site-cookbooks'
     chef.roles_path     = 'roles'
     chef.add_role('dev_vm')
 
