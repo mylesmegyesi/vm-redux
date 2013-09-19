@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mylesmegyesi/dev-vm-builder.git
-  revision: 8fe7c774590b60aa0715b1e49632338abfaef0f2
+  revision: f66e87a86e590fee22a2d172878bdfb14256a5fe
   specs:
     dev-vm-builder (0.0.1)
       thor (~> 0.18.1)
