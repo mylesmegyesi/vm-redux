@@ -3,6 +3,7 @@ run_list [
   'recipe[build-essential]',
   'recipe[mysql::client]',
   'recipe[mysql::server]'
+  'recipe[git]'
 ]
 
 default_attributes({
