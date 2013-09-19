@@ -1,22 +1,32 @@
 
 Vagrant.configure('2') do |config|
 
-  config.ssh.forward_agent = true
-  config.ssh.keep_alive    = true
-  config.ssh.username      = 'mylesmegyesi'
+  config.vm.define('dev-vm') do |dev_vm|
 
-  config.vm.synced_folder ".", "/vagrant", disabled: true
+    dev_vm.vm.synced_folder ".", "/vagrant", disabled: true
 
-  config.vm.provider 'virtualbox' do |v, override|
-    override.vm.box = 'ubuntu-13.04.amd64.virtualbox'
+    dev_vm.ssh.forward_agent = true
+    dev_vm.ssh.keep_alive    = true
+    dev_vm.ssh.username      = 'mylesmegyesi'
+
+    dev_vm.vm.provider 'virtualbox' do |v, override|
+      override.vm.box = 'ubuntu-13.04.amd64.virtualbox'
+      v.name   = 'dev-vm'
+    end
+
+    dev_vm.vm.provider 'vmware_fusion' do |v, override|
+      override.vm.box = 'ubuntu-13.04.amd64.vmware'
+    end
+
+    dev_vm.librarian_chef.cheffile_dir = '.'
+    dev_vm.vm.provision :chef_solo do |chef|
+
+      chef.cookbooks_path = ['cookbooks', 'site-cookbooks']
+      chef.roles_path     = 'roles'
+      chef.add_role('vm')
+
+    end
+
   end
 
-  config.librarian_chef.cheffile_dir = '.'
-  config.vm.provision :chef_solo do |chef|
-
-    chef.cookbooks_path = ['cookbooks', 'site-cookbooks']
-    chef.roles_path     = 'roles'
-    chef.add_role('vm')
-
-  end
 end
