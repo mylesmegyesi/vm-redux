@@ -2,8 +2,9 @@ name 'vm'
 run_list [
   'recipe[build-essential]',
   'recipe[mysql::client]',
-  'recipe[mysql::server]',
-  'recipe[git]'
+  'recipe[mysql::server]'
+  'recipe[git]',
+  'recipe[zsh]'
 ]
 
 default_attributes({
