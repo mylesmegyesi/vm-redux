@@ -12,6 +12,7 @@ run_list [
   'recipe[git]',
   'recipe[zsh]',
   'recipe[tmux]',
+  'recipe[vim_nox]',
   'recipe[chruby]',
   'recipe[ruby_build]',
   'recipe[dotfiles]'
