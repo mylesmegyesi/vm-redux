@@ -17,9 +17,10 @@ run_list [
 
 default_attributes({
   :chruby => {
+    :auto_switch => true,
+    :default     => 'system',
     :sh_dir      => ZSH_DIR,
-    :sh_name     => 'chruby.zsh',
-    :auto_switch => true
+    :sh_name     => 'chruby.zsh'
   },
   :mysql => {
     :client => {
