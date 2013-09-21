@@ -3,6 +3,7 @@ dotfiles_dir = File.join(node['dotfiles']['user_home'], '.dotfiles')
 
 directory dotfiles_dir do
   recursive true
+  ownder node['dotfiles']['username']
 end
 
 git dotfiles_dir do
