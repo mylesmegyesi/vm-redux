@@ -19,6 +19,7 @@ SITE
     runit (1.2.0)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
+    tmux (1.3.2)
     windows (1.10.0)
       chef_handler (>= 0.0.0)
     yum (2.3.2)
@@ -39,5 +40,6 @@ DEPENDENCIES
   git (= 2.6.0)
   mysql (= 3.0.4)
   ruby_build (= 0.8.0)
+  tmux (= 1.3.2)
   zsh (= 1.0.0)
 
