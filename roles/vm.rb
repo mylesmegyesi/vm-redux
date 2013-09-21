@@ -12,7 +12,8 @@ run_list [
   'recipe[git]',
   'recipe[zsh]',
   'recipe[chruby]',
-  'recipe[ruby_build]'
+  'recipe[ruby_build]',
+  'recipe[dotfiles]'
 ]
 
 default_attributes({
@@ -21,6 +22,10 @@ default_attributes({
     :default     => 'system',
     :sh_dir      => ZSH_DIR,
     :sh_name     => 'chruby.zsh'
+  },
+  :dotfiles => {
+    :user_home => USER_HOME,
+    :username  => USERNAME
   },
   :mysql => {
     :client => {
