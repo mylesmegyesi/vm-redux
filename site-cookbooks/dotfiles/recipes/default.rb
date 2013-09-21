@@ -9,6 +9,7 @@ end
 git dotfiles_dir do
   repository 'git@github.com:mylesmegyesi/dotfiles.git'
   action :sync
+  enable_submodules true
 end
 
 bash 'Install the dotfiles' do
