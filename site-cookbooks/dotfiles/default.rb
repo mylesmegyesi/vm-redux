@@ -5,6 +5,7 @@ git dotfiles_dir do
   repository 'git@github.com:mylesmegyesi/dotfiles.git'
   action :sync
   user node['dotfiles']['username']
+  group node['dotfiles']['username']
 end
 
 bash 'Install the dotfiles' do
