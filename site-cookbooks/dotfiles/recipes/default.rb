@@ -14,6 +14,5 @@ git dotfiles_dir do
 end
 
 bash 'Install the dotfiles' do
-  user node['dotfiles']['username']
   code "#{File.join(dotfiles_dir, 'install.rb')} #{node['dotfiles']['user_home']} #{node['dotfiles']['username']}"
 end
