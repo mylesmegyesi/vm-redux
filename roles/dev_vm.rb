@@ -11,6 +11,7 @@ run_list [
   'recipe[mysql::server]',
   'recipe[git]',
   'recipe[zsh]',
+  'recipe[tmux]',
   'recipe[chruby]',
   'recipe[ruby_build]',
   'recipe[dotfiles]'
