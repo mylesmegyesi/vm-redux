@@ -6,7 +6,8 @@ run_list [
   'recipe[mysql::client]',
   'recipe[mysql::server]'
   'recipe[git]',
-  'recipe[zsh]'
+  'recipe[zsh]',
+  'recipe[chruby]'
 ]
 
 USERNAME  = 'mylesmegyesi'
@@ -15,7 +16,7 @@ log '*' * 8
 log Etc.getpwnam(USERNAME)
 log '*' * 8
 
-USER_HOME = "/home/#{USERNAME}"
+USER_HOME = Etc.getpwnam(USERNAME)
 ZSH_DIR   = File.join(USER_HOME, '.zsh')
 
 default_attributes({
