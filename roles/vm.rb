@@ -16,8 +16,9 @@ run_list [
 
 default_attributes({
   :chruby => {
-    :sh_dir  => ZSH_DIR,
-    :sh_name => 'chruby.zsh'
+    :sh_dir      => ZSH_DIR,
+    :sh_name     => 'chruby.zsh',
+    :auto_switch => true
   },
   :mysql => {
     :client => {
@@ -26,5 +27,5 @@ default_attributes({
     :server_root_password   => '',
     :server_repl_password   => '',
     :server_debian_password => ''
-  },
+  }
 })
