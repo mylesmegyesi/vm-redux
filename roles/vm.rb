@@ -21,7 +21,8 @@ default_attributes({
     :auto_switch => true,
     :default     => 'system',
     :sh_dir      => ZSH_DIR,
-    :sh_name     => 'chruby.zsh'
+    :sh_name     => 'chruby.zsh',
+    :sh_owner    => USERNAME
   },
   :dotfiles => {
     :user_home => USER_HOME,

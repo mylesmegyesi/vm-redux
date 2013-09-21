@@ -14,3 +14,7 @@ end
 bash 'Install the dotfiles' do
   code "#{File.join(dotfiles_dir, 'install.rb')} #{node['dotfiles']['user_home']} #{node['dotfiles']['username']}"
 end
+
+bash 'make ZSH the default login shell' do
+  code "sudo chsh -s `which zsh` #{node['dotfiles']['username']}"
+end
