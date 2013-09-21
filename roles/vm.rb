@@ -1,5 +1,9 @@
 require 'etc'
 
+USERNAME  = 'mylesmegyesi'
+USER_HOME = Etc.getpwnam(USERNAME).dir
+ZSH_DIR   = File.join(USER_HOME, '.zsh')
+
 name 'vm'
 run_list [
   'recipe[build-essential]',
@@ -9,10 +13,6 @@ run_list [
   'recipe[zsh]',
   'recipe[chruby]'
 ]
-
-USERNAME  = 'mylesmegyesi'
-USER_HOME = Etc.getpwnam(USERNAME).dir
-ZSH_DIR   = File.join(USER_HOME, '.zsh')
 
 default_attributes({
   :chruby => {
