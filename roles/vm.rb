@@ -4,19 +4,14 @@ name 'vm'
 run_list [
   'recipe[build-essential]',
   'recipe[mysql::client]',
-  'recipe[mysql::server]'
+  'recipe[mysql::server]',
   'recipe[git]',
   'recipe[zsh]',
   'recipe[chruby]'
 ]
 
 USERNAME  = 'mylesmegyesi'
-
-log '*' * 8
-log Etc.getpwnam(USERNAME)
-log '*' * 8
-
-USER_HOME = Etc.getpwnam(USERNAME)
+USER_HOME = Etc.getpwnam(USERNAME).dir
 ZSH_DIR   = File.join(USER_HOME, '.zsh')
 
 default_attributes({
