@@ -11,7 +11,8 @@ run_list [
   'recipe[mysql::server]',
   'recipe[git]',
   'recipe[zsh]',
-  'recipe[chruby]'
+  'recipe[chruby]',
+  'recipe[ruby_build]'
 ]
 
 default_attributes({
