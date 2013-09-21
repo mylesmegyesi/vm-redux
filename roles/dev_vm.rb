@@ -4,7 +4,7 @@ USERNAME  = 'mylesmegyesi'
 USER_HOME = Etc.getpwnam(USERNAME).dir
 ZSH_DIR   = File.join(USER_HOME, '.zsh')
 
-name 'vm'
+name 'dev_vm'
 run_list [
   'recipe[build-essential]',
   'recipe[mysql::client]',
