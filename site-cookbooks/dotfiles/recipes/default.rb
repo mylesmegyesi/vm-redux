@@ -1,6 +1,4 @@
 
-dotfiles_dir = File.join(node['dotfiles']['user_home'], '.dotfiles')
-
 cache_path  = Chef::Config['file_cache_path']
 dotfiles_dir    = "#{cache_path}/mm-dotfiles"
 
