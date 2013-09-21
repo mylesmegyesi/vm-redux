@@ -1,15 +1,16 @@
 
 dotfiles_dir = File.join(node['dotfiles']['user_home'], '.dotfiles')
 
+cache_path  = Chef::Config['file_cache_path']
+dotfiles_dir    = "#{cache_path}/mm-dotfiles"
+
 directory dotfiles_dir do
   recursive true
-  ownder node['dotfiles']['username']
 end
 
 git dotfiles_dir do
   repository 'git@github.com:mylesmegyesi/dotfiles.git'
   action :sync
-  user node['dotfiles']['username']
 end
 
 bash 'Install the dotfiles' do
