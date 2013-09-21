@@ -10,11 +10,11 @@ run_list [
   'recipe[mysql::client]',
   'recipe[mysql::server]',
   'recipe[git]',
+  'recipe[chruby]',
+  'recipe[ruby_build]',
   'recipe[zsh]',
   'recipe[tmux]',
   'recipe[vim_nox]',
-  'recipe[chruby]',
-  'recipe[ruby_build]',
   'recipe[dotfiles]'
 ]
 
