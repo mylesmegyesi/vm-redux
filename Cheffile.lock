@@ -28,7 +28,7 @@ SITE
 GIT
   remote: https://github.com/mylesmegyesi/chef-chruby
   ref: patch-1
-  sha: 1004eee7bfeb69d26915252f05a9b7856e3bba7b
+  sha: 4d32ae580d3029c6518c86522988a93e07be5294
   specs:
     chruby (0.2.1)
       ark (>= 0.0.0)
