@@ -14,5 +14,4 @@ end
 
 bash 'Install the dotfiles' do
   code "#{File.join(dotfiles_dir, 'install.rb')} #{node['dotfiles']['user_home']} #{node['dotfiles']['username']}"
-  user node['dotfiles']['username']
 end
