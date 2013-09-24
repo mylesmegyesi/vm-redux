@@ -7,7 +7,7 @@ directory dotfiles_dir do
 end
 
 git dotfiles_dir do
-  repository 'git@github.com:mylesmegyesi/dotfiles.git'
+  repository 'https://github.com/mylesmegyesi/dotfiles.git'
   action :sync
   enable_submodules true
 end
