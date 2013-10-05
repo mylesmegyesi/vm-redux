@@ -37,4 +37,5 @@ end
 bash 'install leiningen' do
   code "#{lein_bin} self-install"
   user node['clojure']['username']
+  environment ({"HOME" => node['clojure']['lein_home']})
 end
