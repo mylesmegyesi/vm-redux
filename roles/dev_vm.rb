@@ -29,7 +29,8 @@ default_attributes({
   },
   :clojure => {
     :username  => USERNAME,
-    :lein_home => File.join(USER_HOME, '.lein')
+    :lein_home => File.join(USER_HOME, '.lein'),
+    :user_home => USER_HOME
   },
   :dotfiles => {
     :user_home => USER_HOME,
