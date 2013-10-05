@@ -28,8 +28,9 @@ default_attributes({
     :sh_owner    => USERNAME
   },
   :clojure => {
-    :username  => USERNAME,
+    :drip_home => File.join(USER_HOME, '.bin'),
     :lein_home => File.join(USER_HOME, '.lein'),
+    :username  => USERNAME,
     :user_home => USER_HOME
   },
   :dotfiles => {
