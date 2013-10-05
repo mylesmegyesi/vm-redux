@@ -15,7 +15,8 @@ run_list [
   'recipe[zsh]',
   'recipe[tmux]',
   'recipe[vim_nox]',
-  'recipe[dotfiles]'
+  'recipe[dotfiles]',
+  'recipe[clojure]',
 ]
 
 default_attributes({
@@ -25,6 +26,10 @@ default_attributes({
     :sh_dir      => ZSH_DIR,
     :sh_name     => 'chruby.zsh',
     :sh_owner    => USERNAME
+  },
+  :clojure => {
+    :username  => USERNAME,
+    :lein_home => File.join(USER_HOME, '.lein')
   },
   :dotfiles => {
     :user_home => USER_HOME,
